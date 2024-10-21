@@ -237,22 +237,22 @@
       <div class="tabs-widget">
           <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
               <ul class="is-marginless" id="scene-tabs">
-                  <li><a onclick="changeScene('Curacao')">Curacao</a></li>
-                  <li><a onclick="changeScene('Curacao_depth')">Curacao (depth)</a></li>
-                  <li><a onclick="changeScene('JapaneseGardens')">Japanese Gardens</a></li>
-                  <li><a onclick="changeScene('JapaneseGardens_depth')">Japanese Gardens (depth)</a></li>
-                  <li><a onclick="changeScene('D3')">D3</a></li>
-                  <li><a onclick="changeScene('D3_depth')">D3 (depth)</a></li>
-                  <li><a onclick="changeScene('Car')">Car</a></li>
-                  <li><a onclick="changeScene('Car_depth')">Car (depth)</a></li>
-                  <li><a onclick="changeScene('Coral')">Coral</a></li>
-                  <li><a onclick="changeScene('Coral_depth')">Coral (depth)</a></li>
-                  <li><a onclick="changeScene('S1')">S1</a></li>
-                  <li><a onclick="changeScene('S1_depth')">S1 (depth)</a></li>
-                  <li><a onclick="changeScene('S2')">S2</a></li>
-                  <li><a onclick="changeScene('S2_depth')">S2 (depth)</a></li>
-                  <li><a onclick="changeScene('S3')">S3</a></li>
-                  <li><a onclick="changeScene('S3_depth')">S3 (depth)</a></li>
+                  <li id="tab-Curacao"><a onclick="changeScene('Curacao')">Curacao</a></li>
+                  <li id="tab-Curacao_depth"><a onclick="changeScene('Curacao_depth')">Curacao (depth)</a></li>
+                  <li id="tab-JapaneseGardens"><a onclick="changeScene('JapaneseGardens')">Japanese Gardens</a></li>
+                  <li id="tab-JapaneseGardens_depth"><a onclick="changeScene('JapaneseGardens_depth')">Japanese Gardens (depth)</a></li>
+                  <li id="tab-D3"><a onclick="changeScene('D3')">D3</a></li>
+                  <li id="tab-D3_depth"><a onclick="changeScene('D3_depth')">D3 (depth)</a></li>
+                  <li id="tab-Car"><a onclick="changeScene('Car')">Car</a></li>
+                  <li id="tab-Car_depth"><a onclick="changeScene('Car_depth')">Car (depth)</a></li>
+                  <li id="tab-Coral"><a onclick="changeScene('Coral')">Coral</a></li>
+                  <li id="tab-Coral_depth"><a onclick="changeScene('Coral_depth')">Coral (depth)</a></li>
+                  <li id="tab-S1"><a onclick="changeScene('S1')">S1</a></li>
+                  <li id="tab-S1_depth"><a onclick="changeScene('S1_depth')">S1 (depth)</a></li>
+                  <li id="tab-S2"><a onclick="changeScene('S2')">S2</a></li>
+                  <li id="tab-S2_depth"><a onclick="changeScene('S2_depth')">S2 (depth)</a></li>
+                  <li id="tab-S3"><a onclick="changeScene('S3')">S3</a></li>
+                  <li id="tab-S3_depth"><a onclick="changeScene('S3_depth')">S3 (depth)</a></li>
               </ul>
           </div>
       </div>
@@ -274,6 +274,7 @@
     </div>
   </div>
 </section>
+
 
 <script>
   // 场景视频路径配置
@@ -308,8 +309,27 @@
       // 重新加载视频
       leftVideo.load();
       rightVideo.load();
+
+      // 更新标签样式
+      // 获取所有的标签项
+      const tabs = document.querySelectorAll('#scene-tabs li');
+      // 移除所有标签的 is-active 类
+      tabs.forEach(tab => {
+          tab.classList.remove('is-active');
+      });
+      // 为当前选中的标签添加 is-active 类
+      const activeTab = document.getElementById('tab-' + scene);
+      if (activeTab) {
+          activeTab.classList.add('is-active');
+      }
   }
+
+  // 页面加载后，默认选中第一个场景的标签
+  document.addEventListener('DOMContentLoaded', () => {
+      changeScene('Curacao'); // 设置默认场景
+  });
 </script>
+
 
 
 <section class="section">
@@ -323,14 +343,14 @@
           <div class="tabs is-centered is-toggle is-toggle-rounded is-small">
               <ul class="is-marginless" id="restoration-tabs">
                   <!-- 场景选择 -->
-                  <li><a onclick="changeRestorationScene('Curacao')">Curacao</a></li>
-                  <li><a onclick="changeRestorationScene('JapaneseGardens')">Japanese Gardens</a></li>
-                  <li><a onclick="changeRestorationScene('D3')">D3</a></li>
-                  <li><a onclick="changeRestorationScene('Car')">Car</a></li>
-                  <li><a onclick="changeRestorationScene('Coral')">Coral</a></li>
-                  <li><a onclick="changeRestorationScene('S1')">S1</a></li>
-                  <li><a onclick="changeRestorationScene('S2')">S2</a></li>
-                  <li><a onclick="changeRestorationScene('S3')">S3</a></li>
+                  <li id="tab-restoration-Curacao"><a onclick="changeRestorationScene('Curacao')">Curacao</a></li>
+                  <li id="tab-restoration-JapaneseGardens"><a onclick="changeRestorationScene('JapaneseGardens')">Japanese Gardens</a></li>
+                  <li id="tab-restoration-D3"><a onclick="changeRestorationScene('D3')">D3</a></li>
+                  <li id="tab-restoration-Car"><a onclick="changeRestorationScene('Car')">Car</a></li>
+                  <li id="tab-restoration-Coral"><a onclick="changeRestorationScene('Coral')">Coral</a></li>
+                  <li id="tab-restoration-S1"><a onclick="changeRestorationScene('S1')">S1</a></li>
+                  <li id="tab-restoration-S2"><a onclick="changeRestorationScene('S2')">S2</a></li>
+                  <li id="tab-restoration-S3"><a onclick="changeRestorationScene('S3')">S3</a></li>
               </ul>
           </div>
       </div>
@@ -378,7 +398,25 @@
       // 重新加载视频
       leftVideo.load();
       rightVideo.load();
+
+      // 更新标签样式
+      // 获取所有的标签项
+      const tabs = document.querySelectorAll('#restoration-tabs li');
+      // 移除所有标签的 is-active 类
+      tabs.forEach(tab => {
+          tab.classList.remove('is-active');
+      });
+      // 为当前选中的标签添加 is-active 类
+      const activeTab = document.getElementById('tab-restoration-' + scene);
+      if (activeTab) {
+          activeTab.classList.add('is-active');
+      }
   }
+
+  // 页面加载后，默认选中第一个场景的标签
+  document.addEventListener('DOMContentLoaded', () => {
+      changeRestorationScene('Curacao'); // 设置默认场景
+  });
 </script>
 
 
