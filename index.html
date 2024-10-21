@@ -104,16 +104,6 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -143,12 +133,24 @@
 </section>
 
 
-
-
-
-
-<section class="section">
+<section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
+    <!-- Display two side-by-side videos for teaser -->
+    <div class="video-row">
+      <div class="video-container">
+          <h4 class="video-title">With Water vs Without Water (Aquatic-GS)</h4>
+          <video class="video" id="left-teaser-video" loop playsinline autoplay muted
+              src="static/videos/Car_3dgs_vs_aquaticgs.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="left-teaser-videoMerge"></canvas>
+      </div>
+      <div class="video-container">
+          <h4 class="video-title">SeaThru-NeRF vs Aquatic-GS</h4>
+          <video class="video" id="right-teaser-video" loop playsinline autoplay muted
+              src="static/videos/Car_dewater_comparison.mp4" onplay="resizeAndPlay(this)"></video>
+          <canvas height=0 class="videoMerge" id="right-teaser-videoMerge"></canvas>
+      </div>
+    </div>
+
     <!-- Abstract -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -179,45 +181,25 @@
         </div>
       </div>
     </div>
-
-    <!-- Video -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
+
+<!-- Method -->
 <section class="section">
-  <div class="container">
-
-      <!-- Display two side-by-side videos for teaser -->
-      <div class="video-row">
-        <div class="video-container">
-            <h4 class="video-title">With Water vs Without Water (Aquatic-GS)</h4>
-            <video class="video" id="left-teaser-video" loop playsinline autoplay muted
-                src="static/videos/Car_3dgs_vs_aquaticgs.mp4" onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="left-teaser-videoMerge"></canvas>
-        </div>
-        <div class="video-container">
-            <h4 class="video-title">SeaThru-NeRF vs Aquatic-GS</h4>
-            <video class="video" id="right-teaser-video" loop playsinline autoplay muted
-                src="static/videos/Car_dewater_comparison.mp4" onplay="resizeAndPlay(this)"></video>
-            <canvas height=0 class="videoMerge" id="right-teaser-videoMerge"></canvas>
-        </div>
+  <div class="container is-max-desktop">
+    <!-- Main Title -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Method</h2>
       </div>
-
+    </div>
 
     <!-- Aquatic-GS Scene Representation -->
     <div class="columns is-centered">
-      <div class="column is-half">
-        <h3 class="title is-4 has-text-centered">Aquatic-GS employs a hybrid manner to represent underwater 3D scenes</h3>
-        <figure class="image">
+      <div class="column is-one">
+        <h3 class="title is-4">Aquatic-GS employs a hybrid manner to represent underwater 3D scenes</h3>
+        <figure class="image" style="width: 60%; margin: 0 auto;">
           <img src="static/images/HybridManner.png" alt="Aquatic-GS Scene Representation">
         </figure>
       </div>
@@ -225,8 +207,8 @@
 
     <!-- Aquatic-GS Pipeline -->
     <div class="columns is-centered">
-      <div class="column is-half">
-        <h3 class="title is-4 has-text-centered">The pipeline of Aquatic-GS</h3>
+      <div class="column is-one">
+        <h3 class="title is-4">The pipeline of Aquatic-GS</h3>
         <figure class="image">
           <img src="static/images/pipeline.png" alt="Aquatic-GS Pipeline">
         </figure>
@@ -237,6 +219,13 @@
 
 
 
+
+<!--Results-->
+<div class="columns is-centered">
+  <div class="column is-half">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+  </div>
+</div>
 
 <section class="section">
   <div class="container is-max-desktop">
