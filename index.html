@@ -166,25 +166,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            3D representation of underwater scenes is a valuable yet challenging task due to the distance-dependent 
-            and wavelength-selective attenuation and scattering effects. These water effects cause even the most advanced 3D Gaussian Splatting (3DGS) 
-            methods to struggle with effectively representing underwater scenes, resulting in unrealistic colors and incorrect geometry. 
+            Representing underwater 3D scenes is a valuable yet complex task, 
+            as attenuation and scattering effects during underwater imaging significantly couple
+             the information of the objects and the water. This coupling presents a significant challenge 
+             for existing methods in effectively representing both the objects and the water medium simultaneously.              
           </p>
           <p>
-            In this study, we propose <strong>Aquatic-GS</strong>, a novel hybrid 3D representation approach for underwater scenes. 
-            Specifically, we construct a Neural Water Field (NWF) to implicitly model the water properties, 
-            while employing the 3DGS to explicitly model the water-free scene (i.e., without the influence of the water medium). 
-            The outputs of both components are then combined through a physics-based underwater image formation model, 
-            enabling the rendering of underwater scenes. To tackle the challenges water effects pose in accurately representing scene geometry and details, 
-            we design a Depth-Guided Optimization (DGO) mechanism that uses a pseudo-depth map to guide optimization for more precise scene representation. 
-            After optimization, Aquatic-GS not only enables the rendering of novel underwater viewpoints but also supports restoring the 
-            true appearance of underwater scenes, as if the water medium were absent. 
+            To address this challenge, we propose <strong>Aquatic-GS</strong>, 
+            a hybrid 3D representation approach for underwater scenes that effectively represents 
+            both the objects and the water medium. Specifically, we construct a Neural Water Field (NWF) to 
+            implicitly model the water parameters, while extending the latest 3D Gaussian Splatting (3DGS) 
+            to model the objects explicitly. Both components are integrated through a physics-based underwater image 
+            formation model to represent complex underwater scenes. Moreover, to construct more precise scene geometry and details, 
+            we design a Depth-Guided Optimization (DGO) mechanism that uses a pseudo-depth map as auxiliary guidance. 
+            After optimization, Aquatic-GS enables the rendering of novel underwater viewpoints and supports restoring the true appearance of underwater scenes, 
+            as if the water medium were absent. 
           </p>
           <p>
-            Extensive experiments on both simulated and real-world datasets demonstrate that our Aquatic-GS 
-            surpasses existing NeRF-based underwater representations, achieving better rendering quality and 
-            real-time rendering performance with a 270x increase in speed. Furthermore, in terms of underwater scene restoration, 
-            our Aquatic-GS outperforms representative dewatering methods in visual fidelity, detail recovery, color correction, and stability. 
+            Extensive experiments on both simulated and real-world datasets demonstrate that Aquatic-GS surpasses
+             state-of-the-art underwater 3D representation methods, achieving better rendering quality and real-time rendering performance with 
+             a 410x increase in speed. Furthermore, regarding underwater image restoration, 
+             Aquatic-GS outperforms representative dewatering methods in color correction, detail recovery, and stability.
           </p>
         </div>
       </div>
@@ -461,8 +463,8 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{xxxxx,
-  author    = {xxxxx},
+    <pre><code>@article{liu2024aquatic,
+  author    = {Shaohua Liu, Junzhe Lu, Zuoya Gu, Jiajun Li, and Yue Deng},
   title     = {Aquatic-GS:A Hybrid 3D Representation for Underwater Scenes},
   journal   = {xxxx},
   year      = {2024},
